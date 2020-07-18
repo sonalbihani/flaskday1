@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Add a new Club</h1>
+        <!-- <p class="lead">Complete with pre-defined file paths and responsive navigation!</p> -->
+       
+        <!-- <ul class="list-unstyled">
+          <li>Bootstrap 4.5.0</li>
+          <li>jQuery 3.5.1</li>
+        </ul> -->
+      </div>
+      
+    </div>
+    <form action="http://localhost:5000/club/clubs" method="POST">
+      <div class="form-groups">
+        <label for="cname">Name of Club: </label>
+        <input type="text" class="form-control" name="cname" id="cname" value="{{data[0]}}"
+          placeholder="Please enter the name of the club">
+      </div>
+    
+    <div class="form-group">
+      <label for="cname">Club Description: </label>
+      <textarea class="form-control" name="desc" id="desc" cols="30" rows="4" placeholder="Please input the description of the club">
+        {{data[1]}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="category">Add category for Club</label>
+      <select id="category" name="category" class="form-control">
+        <option >Choose...</option>
+        <option value="Social" {% if data[2]=='Social' %} selected="selected"{% endif %}>Social</option>
+        <option value="Charity" {% if data[2]=='Charity' %} selected="selected"{% endif %}>Charity</option>
+        <option value="Informal" {% if data[2]=='Informal' %} selected="selected"{% endif %}>Informal</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
